@@ -1,0 +1,55 @@
+/* Example 1 */
+
+SELECT cname
+FROM Customers;
+
+/* Example 2 */
+
+SELECT cname
+FROM Activities a, Customers c
+WHERE a.day = 1/07/13 AND a.cid = c.cid;
+
+/* Example 3 */
+
+SELECT cname
+FROM Activities a, Customers c
+WHERE NOT a.day = 1/07/13 AND a.cid = c.cid;
+
+/* Example 4 */
+
+SELECT cname
+FROM Slopes s, Activities a, Customers c
+WHERE s.name = 'Olympic Lady' AND s.slopeid = a.slopeid AND a.day = '1/07/13'  AND a.cid = c.cid;
+
+/* Example 5 */
+
+SELECT s.color
+FROM Customers c, Activities a, Slopes s
+WHERE c.name = 'Cho' AND c.cid = a.cid AND a.slopeid = s.slopeid;
+
+/* Example 6 */
+
+SELECT cname
+FROM Customers c
+WHERE c.type = 'ski' AND c.age > MAX(SELECT age
+									 FROM Customers c
+									 WHERE c.type = 'snowboard');
+
+/* Example 7 */
+
+SELECT cname
+FROM Customers c
+WHERE c.type = 'ski' AND c.age > ANY(SELECT age
+									 FROM Customers c
+									 WHERE c.type = 'snowboard');
+
+/* Example 8 */
+
+SELECT MIN(age), MAX(age), AVG(age)
+FROM Customers;
+
+/* Example 9 */
+
+SELECT MIN(age), MAX(age), AVG(age)
+FROM Customers
+WHERE type = 'snowboard';  

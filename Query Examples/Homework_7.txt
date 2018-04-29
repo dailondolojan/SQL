@@ -1,0 +1,62 @@
+/* Problem 1 */
+
+SELECT title, length
+FROM Movies
+WHERE genre = 'Comedy' AND year = 2004;
+
+/* Problem 2 */
+
+SELECT name, gender
+FROM MovieStar
+WHERE DATE >= '1960-01-01';
+
+/* Problem 3 */
+
+SELECT ms.name
+FROM MovieStar ms, StarsIn s
+WHERE s.movieTitle = 'Avatar' AND s.movieYear = 2009 AND s.starName = ms.name AND ms.gender = 'male';
+
+/* Problem 4 */
+
+SELECT starName
+FROM Movies m, StarsIn s
+WHERE m.studioName = 'MGM' AND m.year = 2015 AND m.title = s.movieTitle;
+
+/* Problem 5 */
+
+SELECT name
+FROM MovieExec
+WHERE MAX(netWorth);
+
+/* Problem 6 */
+
+SELECT m.title
+FROM Movies m
+WHERE m.length > (SELECT m.length
+				 	FROM Movies m
+					WHERE m.title = 'Avatar' AND m.year = 2009);
+
+
+BARS Questions
+
+/* Question 1 */
+
+SELECT *
+FROM Sells
+WHERE bar = 'Blue Angel';
+
+/* Question 2*/
+SELECT d.name, d.phone
+FROM Drinkers d, Likes l
+WHERE l.beer = ‘Budweiser” AND l.drinker = d.name;
+ 
+/* Question 3 */
+SELECT bar
+FROM Frequents,
+WHERE drinker = ‘Vince’ AND drinker = ‘Herb’
+ 
+/* Question 4 */
+SELECT *
+FROM Bars b,
+WHERE b.city = “Chicago”
+AND b.addr IS NOT NULL OR phone IS NOT NULL;

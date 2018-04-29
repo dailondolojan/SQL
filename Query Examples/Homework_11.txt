@@ -1,0 +1,31 @@
+/* Question 10 */
+
+SELECT type, MIN(age), MAX(age), AVG(age)
+FROM Customers
+GROUP BY type;
+
+/* Question 11 */
+
+SELECT c.cname, c.type, s.name, a.day
+FROM Slopes s, Customers c, Activities a
+WHERE c.cname = 'Luke' AND c.cid = a.cid AND a.slopeid = s.slopeid;
+
+/* Question 12 */
+
+SELECT type
+FROM Customers
+WHERE AVG(age) > 25
+GROUP BY type;
+
+/* Question 13 */
+
+SELECT cname, age
+FROM Customers
+WHERE type = 'snowboard'
+ORDER BY age DESC
+
+/* Question 14 */
+
+SELECT min(age)
+FROM Customers
+GROUP BY type

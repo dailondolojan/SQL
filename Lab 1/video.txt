@@ -1,0 +1,8 @@
+films (film_id, title, description, rating, length)
+Primary key: (film_id)
+
+customers (customer_id, first_name, last_name, email, address_id)
+Primary key: (customer_id)
+
+addresses (address_id, street, city, state, postal_code, phone_number)
+Primary key: (address_id)

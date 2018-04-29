@@ -1,0 +1,23 @@
+/* 1. How many orders are created by 'customer 1279'? */
+
+SELECT COUNT(orders.O_ORDERKEY)
+FROM orders
+WHERE orders.O_CUSTKEY = 1279;
+
+/* Answer 21 */
+
+/* 2. Find the minimum 'total price' of the orders which are placed by customer 1234. */
+
+SELECT MIN(orders.O_TOTALPRICE)
+FROM orders
+WHERE orders.O_CUSTKEY = 1234;
+
+/* 9003.19 */
+
+/* 3. How many orders have 'total price' between 10,000 and 90,000 dollars? */
+
+SELECT COUNT(orders.O_ORDERKEY)
+FROM orders
+WHERE 10000 < orders.O_TOTALPRICE < 90000;
+
+/* 15000 */
